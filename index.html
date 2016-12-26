@@ -5,10 +5,19 @@ layout: default
 {% assign site_pages = (site.pages | sort: 'title', 'last') %}
 
 <div class="home">
+
+  {% for page in site_pages %}
+    {% if page.contentful_id == '1KHXyhtDMs0iiiuowWYoys' %}
+    <article>
+      <p>{{ page.contentful_fields.body | markdownify }}</p>
+    </article>
+    {% endif %}
+  {% endfor %}
+
   {% if posts_count > 0 %}
     <div class="posts">
       {% for post in site_pages %}
-        {% if post.contentful_id %}
+        {% if post.contentful_id and post.contentful_id != '1KHXyhtDMs0iiiuowWYoys' %}
           <div class="post py2">
             <p class="post-meta">{{ post.date | date: site.date_format }}</p>
             <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h3 class="h2 post-title">{{ post.title }}</h3></a>
