@@ -40,9 +40,20 @@
   margin: 0;
   padding: .25em 0;
   color: #7a7a7a;
+  font-style: normal;
+}
+
+.post-meta--subline {
   font-style: italic;
+  color: inherit;
+  margin-bottom: 60px;
+  display: block;
 }
 
 .related-post-title {
   border-bottom: thin solid #f3f3f3;
+}
+
+.post-header {
+  margin-top: 2em;
 }
