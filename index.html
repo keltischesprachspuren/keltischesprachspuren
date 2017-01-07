@@ -2,7 +2,7 @@
 layout: default
 ---
 {% assign posts_count = (site.pages | size) %}
-{% assign site_pages = (site.pages | sort: 'order') %}
+{% assign site_pages = (site.pages | sort: 'title') %}
 
 <div class="home">
 
@@ -20,11 +20,9 @@ layout: default
         {% if post.contentful_id and post.contentful_id != '1KHXyhtDMs0iiiuowWYoys' %}
           <div class="post py2">
             <p class="post-meta">{{ post.date | date: site.date_format }}</p>
-            <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h3 class="h2 post-title">{{ post.title }}</h3></a>
+            <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h3 class="h2 post-title">{{ post.contentful_fields.subtitle }}</h3></a>
             <p class="post-summary">
-              {% if post.contentful_fields.subtitle %}
-                {{ post.contentful_fields.subtitle }}
-              {% endif %}
+                {{ post.title }}
             </p>
           </div>
         {% endif %}
