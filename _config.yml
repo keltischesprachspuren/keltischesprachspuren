@@ -123,3 +123,10 @@ contentful:
   content_types:
     - "article"
     - "intro"
+
+defaults:
+  -
+    scope:
+      path: 'intro'
+    values:
+      sitemap: false
