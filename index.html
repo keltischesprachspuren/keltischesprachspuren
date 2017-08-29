@@ -6,8 +6,10 @@ layout: default
 
 <div class="home">
 
+  <h1 class="no-content">Keltische sprach-spuren</h1>
+
   {% for page in site_pages %}
-    {% if page.contentful_id == '1KHXyhtDMs0iiiuowWYoys' %}
+    {% if page.contentful_id == '1KHXyhtDMs0iiiuowWYoys' and page.contentful_fields.body %}
     <article>
       <p>{{ page.contentful_fields.body | markdownify }}</p>
     </article>
@@ -30,6 +32,6 @@ layout: default
     </div>
 
   {% else %}
-    <h1 class='center'>{{ site.text.index.coming_soon }}</h3>
+    <h1 class='center'>{{ site.text.index.coming_soon }}</h1>
   {% endif %}
 </div>
